@@ -57,6 +57,7 @@ export default {
       window.setTimeout(() => {
         this.idea_number = this.ideas.indexOf(idea) + 1
         window.location.hash = this.idea_number
+        if (window.ga) window.ga('send', 'event', 'Ideia', 'new', window.location.hash)
         this.idea = idea
         this.loading = false
       }, 500)
